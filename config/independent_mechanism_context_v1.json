@@ -1,0 +1,17 @@
+{
+ "version":"independent-mechanism-context-1.0",
+ "timing":"2026-10-02: selected from retrieved independent literature before reading new selected-gene context; prior global results known",
+ "purpose":"Descriptive mechanistic compatibility audit, not enrichment or target-activity inference",
+ "families":[
+  {"id":"SFK_immune","pmid":"29760707","genes":["FYN","SRC","HCK","FGR","LYN"],"limitation":"Immune recruitment and dose-dependent sepsis outcomes; not cardiomyocyte-specific protection"},
+  {"id":"NOD_RIPK2","pmid":"26320862","genes":["NOD1","NOD2","RIPK2","XIAP","NFKBIA","TNF"],"limitation":"NOD inhibition did not inhibit LPS responses at selective low concentrations; cannot equate to LPS rescue"},
+  {"id":"necroptosis","pmid":"32492702","genes":["RIPK1","RIPK3","MLKL"],"limitation":"Pneumolysin/pneumococcal infection context, not generic LPS; RNA does not measure necroptosis activation"},
+  {"id":"ISR_toxicity","pmid":"38323474","genes":["EIF2AK4","EIF2S1","ATF4","DDIT3","ASNS","SLC1A5","BBC3","TRIB3","PPP1R15A"],"limitation":"Independent ponatinib toxicity mechanism; kinase phosphorylation and protein translation not inferred from RNA"},
+  {"id":"EPHA2_toxicity","pmid":"39348200","genes":["EPHA2"],"limitation":"Regorafenib cardiac injury context at higher/longer exposure; no claim of identical toxicity at our dose"},
+  {"id":"published_SCM_markers","pmid":"37996554","genes":["IL1B","RAC2","VEGFA","ITGB1"],"limitation":"Existing rat tissue/CMAP publication, overlaps GSE185754 validation; not independent drug efficacy"}
+ ],
+ "cohorts":["human","LOCAL_RAT_LPS_2025","LOCAL_RAT_LPS_2025_without_C1_C2","GSE185754","GSE267388","DAS","PON","REG"],
+ "no_new_significance_test":true,
+ "fdr":"Report each source's original genome-wide adjusted P; do not recalculate on selected genes",
+ "decision":"No automatic mechanism passes based on selected mRNA direction; absent mapping remains missing"
+}

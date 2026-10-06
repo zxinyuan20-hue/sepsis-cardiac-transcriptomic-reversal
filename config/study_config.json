@@ -1,0 +1,103 @@
+{
+  "study_id": "Sepsis_Cardiac_Compound_Discovery_20261002",
+  "protocol_version": "0.2.0",
+  "seed": 20261002,
+  "timezone": "Asia/Shanghai",
+  "scope": "public data plus existing private rat cardiomyocyte transcriptomes; compound prioritization and mechanism hypotheses",
+  "paths": {
+    "raw": "data/raw",
+    "reference": "data/reference",
+    "preparation": "outputs/preparation",
+    "audit": "outputs/audit",
+    "logs": "outputs/logs",
+    "analysis": "outputs/analysis",
+    "publication": "outputs/publication"
+  },
+  "datasets": [
+    {
+      "accession": "GSE79962",
+      "species": "Homo sapiens",
+      "role": "human_discovery_and_disease_comparators",
+      "expected_samples": 51,
+      "limitations": "Fatal sepsis myocardium versus non-failing donors; IHD/DCM comparators do not eliminate terminal-state or procurement confounding."
+    },
+    {
+      "accession": "GSE185754",
+      "species": "Mus musculus",
+      "role": "cross_model_support_24h",
+      "expected_samples": 10,
+      "limitations": "LPS endotoxemia; not independent human validation."
+    },
+    {
+      "accession": "GSE267388",
+      "species": "Mus musculus",
+      "role": "held_out_cross_model_support_12h",
+      "expected_samples": 10,
+      "limitations": "Do not use to choose discovery thresholds or compounds; different study and time point, not a longitudinal series."
+    },
+    {
+      "accession": "GSE190856",
+      "species": "Mus musculus",
+      "role": "optional_cell_context_only",
+      "expected_samples": 10,
+      "limitations": "Pooled 3-4 animals per library; genotype and time confounding; no cell-level pseudoreplication."
+    }
+  ],
+  "analysis": {
+    "primary_contrast": "sepsis_vs_nonfailing",
+    "comparator_contrasts": [
+      "sepsis_vs_IHD",
+      "sepsis_vs_DCM"
+    ],
+    "fdr": 0.05,
+    "signature_sizes_per_direction": [
+      50,
+      100,
+      150
+    ],
+    "primary_signature_size_per_direction": 100,
+    "minimum_mapped_genes_per_direction": 15,
+    "orthology": "one-to-one orthologs only; versioned mapping required",
+    "probe_collapse": "highest mean expression probe among unambiguous gene mappings; outcome-independent",
+    "human_normalization": "raw CEL oligo RMA core primary; submitted matrix sensitivity",
+    "formal_analysis_enabled": true,
+    "qc_flagged_samples": [
+      "GSM2109172"
+    ],
+    "limma_ebayes": {
+      "trend": false,
+      "robust": false
+    },
+    "multiple_testing": "BH separately for each prespecified contrast, all unambiguously annotated core-array genes; no detection-call filter"
+  },
+  "lincs": {
+    "primary_accession": "GSE70138",
+    "release": "2017-03-06",
+    "pert_type": "trt_cp",
+    "signature_quality": "release-specific operational filter, NOT is_hiq: distil_cc_q75 >= 0.2 AND distil_ss >= 6 AND distil_nsample >= 3",
+    "min_distil_cc_q75": 0.2,
+    "min_distil_ss": 6,
+    "min_distil_nsample": 3,
+    "primary_times_hours": [
+      6,
+      24
+    ],
+    "primary_max_dose_um": 10,
+    "primary_gene_universe": "measured landmark genes, identified from release gene_info",
+    "sensitivity_gene_universe": "well-inferred genes only when annotation supports it",
+    "score": "weighted bidirectional enrichment with expression/detectability-matched null; custom score, not official CMap tau",
+    "compound_aggregation": "within-cell median then across-cell median; preserve cell/dose/time records",
+    "minimum_high_quality_signatures": 2,
+    "minimum_distinct_cell_lines": 2,
+    "minimum_genes_per_direction": 15,
+    "insufficient_coverage_action": "STOP or preregister a documented amendment; do not silently lower gates",
+    "external_phase1_required_before_strong_robustness_claim": true
+  },
+  "downloads": {
+    "timeout_seconds": 90,
+    "max_attempts": 3,
+    "max_workers": 3,
+    "min_free_gb": 25,
+    "max_automatic_file_gb": 8
+  }
+}

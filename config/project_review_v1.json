@@ -1,0 +1,21 @@
+{
+  "version": "project-review-1.0",
+  "date": "2026-10-05",
+  "seed": 20261005,
+  "output": "outputs/publication/project_review_v1",
+  "search_output": "outputs/analysis/literature_positioning_v1",
+  "pubmed_limit": 100,
+  "crossref_limit": 30,
+  "cutoff": "2026/10/05",
+  "scope": "Targeted closest-literature review and existing-result synthesis, not systematic review or new biological analysis",
+  "pubmed_queries": {
+    "cardiac_repurposing": "(sepsis[Title/Abstract] OR septic[Title/Abstract]) AND (cardiomyopathy[Title/Abstract] OR myocardial[Title/Abstract] OR cardiac[Title/Abstract]) AND (repurposing[Title/Abstract] OR repositioning[Title/Abstract] OR \"connectivity map\"[Title/Abstract] OR CMAP[Title/Abstract] OR LINCS[Title/Abstract])",
+    "cardiac_bioinformatics_drugs": "(sepsis[Title/Abstract] OR septic[Title/Abstract]) AND (cardiomyopathy[Title/Abstract] OR myocardial[Title/Abstract]) AND (bioinformatics[Title/Abstract] OR transcriptomic[Title/Abstract] OR transcriptome[Title/Abstract]) AND (drug[Title/Abstract] OR compound[Title/Abstract] OR inhibitor[Title/Abstract])",
+    "signature_reversal_validity": "(\"connectivity map\"[Title/Abstract] OR LINCS[Title/Abstract] OR \"signature reversal\"[Title/Abstract]) AND (reproducibility[Title/Abstract] OR robustness[Title/Abstract] OR benchmarking[Title/Abstract] OR \"cell context\"[Title/Abstract] OR cytotoxicity[Title/Abstract])",
+    "dataset_overlap": "GSE79962 OR GSE237861 OR GSE141864 OR GSE217421"
+  },
+  "crossref_queries": ["septic cardiomyopathy transcriptomic drug repurposing", "connectivity map signature reversal reproducibility cell context"],
+  "seed_pmids": ["28067713", "37996554", "38323474", "32492702"],
+  "seed_dois": ["10.1038/s41467-024-52145-4"],
+  "decision": "No single-drug protective-mechanism escalation; assess cross-cohort robustness contribution without claiming novelty from absence of hits"
+}

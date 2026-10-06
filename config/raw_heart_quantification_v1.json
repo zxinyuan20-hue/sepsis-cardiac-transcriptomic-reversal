@@ -1,0 +1,30 @@
+{
+  "version": "raw-heart-quantification-1.0",
+  "seed": 20261002,
+  "index_memory_mb": 2000,
+  "out": "outputs/analysis/raw_heart_v1",
+  "cutadapt_version": "5.2",
+  "trim_arguments": ["-u", "12", "-a", "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA", "-a", "A{20}", "-a", "G{20}", "-n", "3", "-q", "20", "-m", "20", "--max-n", "0.1", "-j", "4"],
+  "trim_rationale": "Conservative common preprocessing for QuantSeq FWD: remove initial random-primer bases, Illumina adapter, poly-A and two-colour NextSeq poly-G tails, low-quality 3prime bases; differs from author Trimmomatic and is not claimed exact reproduction",
+  "subjunc_arguments": ["-T", "4", "-n", "14", "-m", "1", "-M", "3", "-I", "5"],
+  "featurecounts_arguments": ["-T", "4", "-t", "exon", "-g", "gene_id", "--extraAttributes", "gene_name,gene_type", "-Q", "10", "--primary"],
+  "primary_strand": 1,
+  "audit_strands": [0, 1, 2],
+  "automatic_sample_exclusion": false,
+  "qc_hold_thresholds": {
+    "retained_read_fraction_min": 0.5,
+    "assigned_forward_fraction_min": 0.2,
+    "assigned_forward_reads_min": 500000,
+    "forward_share_of_forward_plus_reverse_min": 0.8
+  },
+  "qc_hold_action": "Retain all samples; pause formal disease inference if any threshold fails. Investigate technical cause, preserve results and record separate amendment before any change.",
+  "expression_filter": "Entrez gene CPM >=1 in at least7 of14 samples using raw library size, before TMM; label independent",
+  "entrez_mapping": "GENCODE v47 transcript Entrez map joined through same GTF; retain genes with exactly one distinct Entrez ID and sum counts for multiple stable gene IDs sharing same Entrez; no symbol rescue",
+  "primary_endpoint": "Unchanged original100UP/90DOWN mean within-sample percentile rank difference on filtered Entrez genes shared with discovery; exact one-sided unadjusted label permutations C(14,7)=3432",
+  "primary_family": "GSE237861 plus original GSE141864 FFPE result, BH family2",
+  "sensitivity": "Sex-stratified exact permutations C(10,6)*C(4,1)=840 using group coefficient in score~sex+group; original50/50; leave-one-patient-out score direction",
+  "secondary_model": "edgeR quasi-likelihood GLM ~sex+group using TMM-normalized gene counts; all-gene BH; age descriptive only due small n",
+  "pathway_model": "limma voom camera ~sex+group using estimated residual correlation primary, fixed0.01 sensitivity; planned two-cohort five-pathway family",
+  "eligibility": "No disease inference before all14 publisher FASTQ checksums, reference hashes, runtime and count QC pass; primary query coverage>=0.70 each direction",
+  "interpretation": "Terminal sepsis vs noninfectious critically ill autopsy heart. No echo-based SCM case definition and no drug efficacy inference. Post-screen external disease assessment."
+}

@@ -1,0 +1,11 @@
+{
+  "dated": "2026-10-06",
+  "source": "outputs/publication/csbj_preparation_v1",
+  "scientific_source": "outputs/publication/evidence_hierarchy_revision_v1",
+  "output": "outputs/delivery/CSBJ_20261006",
+  "code_folder": "GitHub_code",
+  "submission_folder": "Submission_package",
+  "archive_version": "v0.1.0-prepublication",
+  "dpi": 600,
+  "public_upload_performed": false
+}

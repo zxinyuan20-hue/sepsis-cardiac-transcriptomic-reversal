@@ -1,0 +1,16 @@
+{
+ "version":"expansion-feasibility-1.0",
+ "dataset":"GSE217421",
+ "purpose":"Assess all drug overlap and donor-aware comparison feasibility before inspecting additional cardiac drug effects",
+ "minimum_drugs_for_comparative_extension":8,
+ "minimum_donors_per_drug":4,
+ "minimum_matched_cultures_per_donor":2,
+ "identity_rule":"PubChem name-derived full InChIKey or RDKit canonical-tautomer full-key agreement with frozen LINCS structure; connectivity-only excluded; actual vial identity not verified",
+ "dose_rule":"Different numeric concentrations within one drug state make entire drug ineligible until independently resolved; case-only unit capitalization normalized",
+ "duplicate_rule":"Preserve all perturbation IDs; if multiple full-identity equivalent IDs remain, use median of their frozen LINCS scores for chemical-level descriptive comparison",
+ "metadata_rule":"Exact GEO title cell line and characteristics treatment condition/investigative unit/sample id/well must reproduce count-design keys; unmatched metadata excluded",
+ "excluded_biologics":["BEV","CTX","EDN","IGF","RTX","TNF","TRS"],
+ "candidate_scope":"All structure-supported compounds shared with original 482-entry multicell screen, regardless of rank or score sign",
+ "known_results":"Original LINCS ranking and VEM cardiac result already known; other cardiac effects not inspected",
+ "no_efficacy_claim":true
+}

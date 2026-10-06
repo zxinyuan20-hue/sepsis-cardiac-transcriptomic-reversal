@@ -1,0 +1,7 @@
+{
+  "rscript": "Rscript",
+  "r_library": "environment/R-library",
+  "python": "python",
+  "threads": 4,
+  "local_rat_source": "data/private/H9c2"
+}

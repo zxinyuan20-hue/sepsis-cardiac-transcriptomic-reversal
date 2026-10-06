@@ -1,0 +1,8 @@
+{
+  "source_url": "https://s3.amazonaws.com/data.clue.io/repurposing/downloads/repurposing_drugs_20200324.txt",
+  "source_date": "2020-03-24",
+  "local_file": "repurposing_drugs_20200324.txt",
+  "matching": "exact case-insensitive pert_iname; no fuzzy/salt/synonym rescue; structure not independently verified",
+  "clinical_phase_warning": "historical database annotation, not current approval status",
+  "purpose": "post-ranking mechanism triage; never changes frozen statistical rankings"
+}

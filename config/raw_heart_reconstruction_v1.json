@@ -1,0 +1,17 @@
+{
+  "version": "raw-heart-1.0",
+  "seed": 20261002,
+  "out": "outputs/analysis/raw_heart_v1",
+  "manifest": "outputs/analysis/external_human/GSE237861_heart_run_manifest.tsv",
+  "ena_url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA996949&result=read_run&fields=run_accession,experiment_accession,sample_accession,fastq_ftp,fastq_bytes,fastq_md5&format=tsv",
+  "download_workers": 8,
+  "threads": 4,
+  "subread_url": "https://downloads.sourceforge.net/project/subread/subread-2.1.1/subread-2.1.1-Windows-x86_64.zip",
+  "subread_md5": "bfe24bc898086b03391cd2e45cc6399b",
+  "fasta_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/GRCh38.primary_assembly.genome.fa.gz",
+  "gtf_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/gencode.v47.primary_assembly.annotation.gtf.gz",
+  "gencode_checksums_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/MD5SUMS",
+  "reference": "GENCODE v47 GRCh38 primary assembly",
+  "alignment": "Subjunc 2.1.1 native Windows; gene-level exon counts using featureCounts 2.1.1",
+  "status": "ACQUISITION_ONLY_ANALYTICAL_PARAMETERS_REQUIRE_FREEZE_BEFORE_QUANTIFICATION"
+}

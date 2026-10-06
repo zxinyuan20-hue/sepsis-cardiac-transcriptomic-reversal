@@ -1,0 +1,14 @@
+{
+ "version":"discovery-scan-sensitivity-1.0",
+ "output":"outputs/analysis/discovery_exchangeability_v1/scan_sensitivity",
+ "seed":20261005,
+ "status":"Post-result amendment before computing date-adjusted effects; original drug zero hits and scan-date distribution known",
+ "models":["primary_reproduction: all51, four group means","scan_adjusted: all51, four group means plus categorical CEL scan day","shared_days_adjusted: remove only days lacking either sepsis or nonfailing; retain all groups on retained dates; four group means plus scan day"],
+ "contrast":"sepsis minus nonfailing",
+ "normalization":"Reuse fixed full51-sample RMA matrix and original18866-gene mapping in every model; subset analysis is conditional on original preprocessing, not re-normalization",
+ "statistics":"Original limma eBayes trend=false robust=false, BH across18866 genes per descriptive sensitivity; no pooled families or replacement primary analysis",
+ "endpoints":["DEG counts by direction","all-gene logFC rank correlation with original","same sign and BH retention of original significant genes","direction and BH retention for frozen100UP90DOWN query"],
+ "independent_audit":"Reproduce original model exactly within1e-8; independently compute OLS contrast coefficients in numpy for both sensitivity designs",
+ "prohibited":"No drug reranking, new query selection, disease-label permutation, post hoc clinical subgroup selection, imputation of missing control covariates, or clinical efficacy claim",
+ "interpretation":"Scan day is one measured technical covariate and does not remove group-specific procurement or unknown preparation-batch confounding"
+}

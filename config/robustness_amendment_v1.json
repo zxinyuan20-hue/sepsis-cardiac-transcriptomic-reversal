@@ -1,0 +1,23 @@
+{
+ "version":"robustness-amendment-1.0",
+ "seed":20261005,
+ "threads":4,
+ "output":"outputs/analysis/robustness_amendment_v1",
+ "publication":"outputs/publication/robustness_amendment_v1",
+ "source_manuscript":"outputs/publication/h9c2_methods_revision_v1/Full_manuscript_draft.md",
+ "historical_manifests":["outputs/audit/screening_release_manifest.json","outputs/audit/external_compound_release_manifest.json","outputs/publication/h9c2_methods_revision_v1/revision_manifest.json"],
+ "status":"Post-result exploratory extension; rules fixed before computing new extension outputs; previous zero-hit results known",
+ "identity":"Group only verified full source InChIKeys agreeing with SMILES-derived keys; retain unresolved entries as individual IDs. Do not merge on name, first InChIKey block, salt parent or tautomer alone. Canonical-tautomer groups are recorded separately as annotation, not merged in this analysis.",
+ "entity_score":"Pool eligible original signatures by entity and cell, median within cell then median cells. Retain original eligible signature set and original measurement/query background. Exact duplicate sig_id forbidden. No expansion to newly eligible entries.",
+ "entity_inference":"Reuse same 10000 matched gene-label null queries, recompute merged-entity scores at signature level, preserve singleton nulls. One-sided (1+exceedances)/10001; observed<=0 gets P=1; BH across all resulting operational entities including unresolved IDs. Entity p-values describe matched-set null only. Original candidate gate not relaxed.",
+ "entity_stability":"Reuse original 1000 patient-bootstrap query draws and coverage flags; recompute merged-entity scores. Average tied ranks and 5th/95th rank percentiles; positive frequency denominator all planned draws; no top-k tie breaking for a new candidate decision.",
+ "multi_score":"Same frozen 100-UP/90-DOWN signed query on same 978 landmarks: original gated weighted running-sum, negative cosine(query,z), negative Spearman(query,z) with average ties. Same within-cell then across-cell medians. Descriptive correlations, sign agreement, tie-inclusive top20 overlap only; no P values, consensus significance or new formal hits.",
+ "cardiac_multi_score":"Same 897 common measured landmarks and mapped frozen query; negative cosine and negative Spearman of query with donor logFC, median donors, compared to original harmonized ES. Not a test of drug rescue.",
+ "toxicity":"Use Hansen 2024 Supplementary Data 3 clinical cardiotoxicity classes only where exact source drug mapping is available. Unmapped drugs remain unknown/not classified by this source. These labels are historical source categories, not verified toxicity at current assay dose.",
+ "magnitude":"For fixed 21 drugs use common all-gene intersection across existing expansion filters. RMS of equal-donor mean logFC primary; median absolute logFC sensitivity. Primary descriptive disease endpoint GSE237861 net reversal; report UP and DOWN as components, discovery and GSE141864 as context. No compound selection based on new results.",
+ "toxicity_analysis":"Descriptive Spearman and leave-one-drug-out ranges, source-class medians and ranges; complete-case OLS standardized net reversal~source toxicity binary+standardized log RMS only if >=4 drugs per class and full rank. Report coefficients descriptively, no independent-drug P/CI because shared donors/controls and drug classes; no causal adjustment claim. Class omissions descriptive only.",
+ "disease_label_null":"Design and feasibility only in this amendment. Do not execute before separately fixing exchangeability/covariates, full-pipeline null and empty-query rules. No switching nulls to obtain significance.",
+ "deferred":["whole-pathway meta-analysis","HeartMap","new wet-lab work","new perturbation databases"],
+ "stop_rule":"Do not promote candidate efficacy or infer absence of toxicity from null association; do not overwrite original scientific authority or frozen results. All outputs remain exploratory.",
+ "toxicity_supplement_url":"https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11390749/supplementaryFiles"
+}

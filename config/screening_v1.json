@@ -1,0 +1,23 @@
+{
+  "version": "screening-1.0",
+  "seed": 20261002,
+  "threads": 4,
+  "weight_exponent": 1,
+  "rank_background": "all 978 measured landmarks; query/randomization pool limited to 948 human-mapped landmarks",
+  "direction_rule": "Connectivity=(ES_up-ES_down)/2; set to zero if ES_up*ES_down>=0. Reversal=-Connectivity; positive means reversal.",
+  "aggregation": "median across signatures within compound-cell, then median across cells",
+  "null_iterations": 10000,
+  "null_batch_size": 100,
+  "null_strata_mean_bins": 4,
+  "null_strata_sd_bins": 4,
+  "null_scheme": "joint without-replacement permutation of up/down labels within human all-sample mean-expression and SD strata; preserves both set counts and disjointness",
+  "p_value": "one-sided (1+null>=observed)/(B+1); nonpositive reversal receives P=1; BH over all 482 eligible multicell compounds",
+  "bootstrap_iterations": 1000,
+  "bootstrap_scheme": "resample human biological samples with replacement within each of four groups; recompute limma/eBayes/BH across all genes; select landmark up/down top100 by abs(t); minimum15 each; report failed coverage replicates",
+  "top_k_stability": 20,
+  "shortlist_maximum": 10,
+  "supported_candidate_gate": "primary empirical BH q<0.05, positive score, >=50% cell medians positive, top20 inclusion >=0.5 across all planned bootstrap replicates, positive reversal for both size sensitivities and both preprocessing/sample sensitivities",
+  "phase1_status": "not yet acquired; no cross-release robustness claims",
+  "held_out_rat_effects": "not accessed during screening",
+  "scope": "competitive random-gene-set evidence plus human sampling stability; no clinical efficacy or causal claims"
+}

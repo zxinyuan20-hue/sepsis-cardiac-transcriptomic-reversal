@@ -1,0 +1,18 @@
+{
+ "version":"figure-revision-2.0",
+ "date":"2026-10-05",
+ "out":"outputs/publication/figure_revision_v2",
+ "previous":"outputs/publication/manuscript_assets_v1",
+ "dpi":600,
+ "width_inches":7.2,
+ "seed":20261005,
+ "scope":"Visual revision of saved results; descriptive rat evidence display; no new differential testing, screening or gene selection",
+ "contracts":[
+  {"figure":"Figure1","archetype":"schematic-led composite","claim":"Independent disease cohorts and cross-model evidence inform different aspects of one compound-screening workflow; cardiac donors are reused","design":"Aligned biological-source illustrations, short left-aligned labels, separate discovery and contextual branches"},
+  {"figure":"Figure2","archetype":"quantitative grid","claim":"Initial screening and cardiac-context comparison do not produce formally supported drugs","design":"Named-drug horizontal intervals, no chart-interior paragraph annotations"},
+  {"figure":"Figure3","archetype":"quantitative grid","claim":"Independent human disease effects differ and neither meets the two-cohort adjusted threshold"},
+  {"figure":"Figure4","archetype":"quantitative grid","claim":"Full 21-drug bidirectional reassessment separates net effects from component evidence","design":"Aligned heatmap and forest plot, equal treatment of all drug names"},
+  {"figure":"FigureS1","archetype":"quantitative grid","claim":"Gene agreement and fixed pathway results provide limited mechanistic support"},
+  {"figure":"FigureS2","archetype":"schematic-led composite","claim":"The existing rat LPS cardiomyocyte data show within-model differential expression but limited global agreement with human myocardium","design":"Existing experimental design, all-gene volcano, ortholog effect density and saved sensitivity summary"}
+ ]
+}

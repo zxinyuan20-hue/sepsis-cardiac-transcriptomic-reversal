@@ -1,0 +1,22 @@
+{
+ "version":"biology-extension-1.0", "dated_amendment":"2026-10-05", "seed":20261005,
+ "analysis":"outputs/analysis/biology_extension_v1", "publication":"outputs/publication/evidence_hierarchy_revision_v1",
+ "source_publication":"outputs/publication/discovery_manuscript_revision_v1",
+ "gmt":"outputs/analysis/biology_extension_v1/sources/h.all.v2025.1.Hs.entrez.gmt",
+ "rank":"sign(logFC) times two-sided native-P normal-equivalent z; equal scores ordered by numeric Entrez ID; native limma and edgeR model differences retained",
+ "primary_universe":"intersection of six mapped fitted-gene sets; one-to-one nonhuman orthologs retained from existing analysis",
+ "sensitivity_universe":"all mapped fitted genes separately per dataset",
+ "min_size":15, "max_size":500, "p_floor":1e-300, "sample_size":101, "eps":1e-10,
+ "enrichment":"weighted preranked GSEA using GSEApy multilevel port; all 50 pathways, no outcome-selected subsets; no independent patient inference",
+ "multiplicity":"BH across six times 50 tests per scope; within-dataset 50-test BH descriptive only",
+ "concordance":"all-pathway NES Spearman and direction agreement; compare logFC and signed-z correlations on matched universe descriptively; no pathway-independent P values or formal claim of increased conservation",
+ "scope_boundary":"Only Hallmark and adult human cardiac reference localization added; post-result exploratory extension. Original screening, frozen query, tests and drug conclusions unchanged.",
+ "datasets":[
+  {"name":"GSE79962","path":"outputs/analysis/human/primary_sepsis_vs_nonfailing.tsv","id":"entrez_id","p":"P.Value"},
+  {"name":"GSE237861","path":"outputs/analysis/raw_heart_v1/GSE237861_all_gene_results.tsv","id":"entrez_id","p":"PValue"},
+  {"name":"GSE141864","path":"outputs/analysis/external_human/GSE141864_all_gene_results.tsv","id":"entrez_id","p":"P.Value"},
+  {"name":"H9c2","path":"outputs/analysis/mechanism/LOCAL_RAT_LPS_2025_all_gene_results.tsv","id":"human_entrez","p":"P.Value"},
+  {"name":"GSE185754","path":"outputs/analysis/mechanism/GSE185754_all_gene_results.tsv","id":"human_entrez","p":"P.Value"},
+  {"name":"GSE267388","path":"outputs/analysis/mechanism/GSE267388_all_gene_results.tsv","id":"human_entrez","p":"P.Value"}
+ ]
+}

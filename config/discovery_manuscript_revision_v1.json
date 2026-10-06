@@ -1,0 +1,9 @@
+{
+ "version":"discovery-manuscript-revision-1.0",
+ "source_publication":"outputs/publication/robustness_amendment_v1",
+ "metadata_analysis":"outputs/analysis/discovery_exchangeability_v1",
+ "output":"outputs/publication/discovery_manuscript_revision_v1",
+ "asset_patterns":["figures/**/*","source_data/**/*","Supplementary_Note_*.docx","Supplementary_Note_*.md","Tables.docx","Figure_legends*.md"],
+ "scope":"Integrate verified clinical coverage and scan sensitivity into a separate manuscript revision; no new statistics, no altered primary query or formal drug conclusions",
+ "source_manifests":["outputs/publication/robustness_amendment_v1/amendment_release_manifest.json","outputs/publication/discovery_exchangeability_v1/release_manifest.json"]
+}

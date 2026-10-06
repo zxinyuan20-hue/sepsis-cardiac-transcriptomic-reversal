@@ -1,0 +1,19 @@
+{
+  "version": "independent-evidence-1.0",
+  "search_date": "2026-10-02",
+  "seed": 20261002,
+  "drugs": ["dasatinib", "ponatinib", "regorafenib"],
+  "brands": {"dasatinib":"SPRYCEL", "ponatinib":"ICLUSIG", "regorafenib":"STIVARGA"},
+  "synonyms": {"dasatinib":"dasatinib OR BMS-354825 OR Sprycel", "ponatinib":"ponatinib OR AP24534 OR Iclusig", "regorafenib":"regorafenib OR BAY 73-4506 OR Stivarga"},
+  "literature_max_per_query": 60,
+  "geo_max_per_query": 100,
+  "disease_terms": "sepsis OR septic OR endotoxemia OR endotoxaemia OR lipopolysaccharide OR LPS",
+  "cardiac_terms": "heart OR cardiac OR cardiomyocyte OR myocardial OR cardiotoxicity OR cardiovascular",
+  "known_human_discovery": "GSE79962",
+  "known_drug_resource": "GSE217421",
+  "known_disease_support": ["GSE185754", "GSE267388", "LOCAL_RAT_LPS_2025"],
+  "scope": "Targeted evidence review, not exhaustive systematic review; original drug statistics unchanged",
+  "independence_rule": "Different accession alone is insufficient: check patient/donor origin, study publication, sample IDs and reused resources",
+  "mechanism_rule": "Select any new mechanism from independent literature before looking at new gene-level concordance; retain negative/toxicity findings; no target mRNA change interpreted as kinase activity",
+  "followup_rule": "No drug advances to a protective mechanism claim without independent disease support, relevant drug context and reconciled safety/direction evidence"
+}

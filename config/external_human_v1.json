@@ -1,0 +1,18 @@
+{
+ "version":"external-human-1.0",
+ "seed":20261002,
+ "stage":"Independent disease-pattern replication; no drug reranking",
+ "primary_cohorts":["GSE237861","GSE141864"],
+ "GSE141864_primary":"Heart FFPE only:5 unique MSS patients vs2 acute noninfectious death controls.3 additional frozen specimens duplicate cases, excluded from inference",
+ "GSE141864_expression":"Submitted RMA expression from GEO sample tables; confirm numeric scale/annotation. No claimed CEL reprocessing",
+ "gene_mapping":"Only transcript clusters mapping unambiguously to one Entrez ID; multiple clusters per gene collapsed by highest pooled mean among7primary samples, tie lexical ID; mapping chosen without group effect",
+ "primary_endpoint":"Mean percentile rank of original100UP query minus mean percentile rank of original90DOWN query, within sample over expressed/mapped genes shared with discovery; positive case-control difference supports disease pattern",
+ "query_coverage_min_fraction":0.70,
+ "exact_test":"One-sided all patient-label assignments at fixed case/control counts, unstudentized mean difference; conditional exchangeability assumption, observational not randomized. n=7 implies21assignments",
+ "primary_family":"Two planned cohort-level tests; BH family2. Unavailable or ineligible cohort assigned P=1 for conservative family adjustment, explicitly not observed test",
+ "sensitivity":"Original50-per-direction query; leave one patient out for effect direction; median cluster collapse; no outcome-dependent exclusions",
+ "secondary":"All-gene sepsis/control logFC Spearman versus original human profile descriptive only; limma empirical Bayes per-gene BH; five prior fixed pathway sets with camera estimated residual gene correlation, BH across planned2cohorts x5sets; fixed0.01 sensitivity",
+ "GSE237861_if_no_matrix":"Do not reconstruct sample counts from fold changes. Author individual sex-matched contrasts can support only separate descriptive patient-wise direction audit, no pooled P or meta-analysis of dependent control contrasts",
+ "237_descriptive_rule":"Seven heart contrasts; inspect schema and whether all tested genes present. Report original190 query coverage and UP/DOWN sign agreement for each individual plus median gene logFC description; no threshold selection on external effects",
+ "interpretation":"Post-screen independent disease check, not clinical validation, external drug confirmation or new treatment support. Cohorts not pooled across platforms/clinical controls"
+}

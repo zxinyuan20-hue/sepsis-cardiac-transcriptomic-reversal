@@ -1,0 +1,21 @@
+# Private data and generated outputs must never be committed.
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+config/*.local.json
+environment/R-library/
+data/**
+!data/README.md
+outputs/**
+*.fastq*
+*.fq*
+*.bam
+*.cram
+*.gctx
+*.h5ad
+*.h5
+*.rds
+*.RData
+*.tar.gz

@@ -1,0 +1,13 @@
+{
+ "pubmed_queries":[
+  {"id":"hsp90_sepsis_heart","query":"(HSP90 OR \"heat shock protein 90\" OR AUY922 OR luminespib OR geldanamycin) AND (sepsis OR lipopolysaccharide OR endotoxemia) AND (heart OR cardiac OR cardiomyocyte)"},
+  {"id":"raf_mek_sepsis_heart","query":"(RAF OR MEK OR vemurafenib OR encorafenib OR tovorafenib) AND (sepsis OR lipopolysaccharide OR endotoxemia) AND (heart OR cardiac OR cardiomyocyte)"},
+  {"id":"raf_mek_cardiac_safety","query":"(BRAF OR MEK OR vemurafenib OR encorafenib) AND (cardiotoxicity OR \"left ventricular dysfunction\" OR \"heart failure\") AND (review OR meta-analysis)"},
+  {"id":"auy922_safety","query":"(AUY922 OR luminespib) AND (cardiac OR QT OR toxicity)"},
+  {"id":"bisindolylmaleimide_model","query":"bisindolylmaleimide AND (sepsis OR lipopolysaccharide OR cardiomyocyte)"},
+  {"id":"cardiac_drug_transcriptome","query":"(cardiomyocyte OR \"cardiac cells\") AND (\"drug perturbation\" OR \"drug-induced transcriptomic\" OR \"LINCS\")"}
+ ],
+ "max_per_query":8,
+ "source_scope":"targeted discovery, not systematic review; PubMed relevance sort with complete abstracts when available",
+ "identity":"PubChem lookup by frozen LINCS full InChIKey; preserve unmatched/ambiguous results"
+}

@@ -1,0 +1,6 @@
+{
+  "source": "outputs/publication/contribution_review_v1",
+  "output": "outputs/publication/h9c2_methods_revision_v1",
+  "recovery": "outputs/publication/h9c2_methods_recovery_v1",
+  "release_pointer": "H9C2_METHODS_RELEASE.json"
+}

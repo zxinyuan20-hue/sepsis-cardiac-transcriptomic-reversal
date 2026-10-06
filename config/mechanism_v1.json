@@ -1,0 +1,18 @@
+{
+ "version":"mechanism-1.0",
+ "seed":20261002,
+ "pathways":["R-HSA-3371497","R-HSA-5673001","R-HSA-166016","R-HSA-611105","R-HSA-9020702"],
+ "minimum_pathway_genes":10,
+ "minimum_pathway_coverage":0.25,
+ "camera_inter_gene_correlation":0.01,
+ "primary_cohorts":["human","GSE185754","GSE267388","LOCAL_RAT_LPS_2025"],
+ "gene_model":"within-study TMM + limma-voom; preserve estimated counts; BH across all retained original gene IDs before ortholog filtering",
+ "pathway_test":"camera competitive directional test, inter.gene.cor=0.01; global BH across evaluable primary cohort-pathway tests; no pathway flux/activation inference",
+ "rat_sensitivity_excluded_samples":["C1","C2"],
+ "rat_sensitivity_reason":"prespecified based on earlier depth/PCA QC, not disease effects; main analysis retains all12",
+ "mapping":"fixed one-to-one orthologs and unambiguous Ensembl-Entrez; no symbol rescue",
+ "target_symbols":["HSP90AA1","HSP90AB1","BRAF","RAF1","MAP2K1","MAP2K2","MAPK1","MAPK3","ATM"],
+ "provenance_limit":"Rat StringTie count-generation settings and GSE267388 quantifier not fully documented; their gene inference is provisional exploratory support",
+ "question":"Do prespecified drug-related and cardiac inflammatory/metabolic processes show concordant disease associations across human myocardium, mouse hearts and private rat cardiomyocytes?",
+ "no_drug_effect_claim":true
+}

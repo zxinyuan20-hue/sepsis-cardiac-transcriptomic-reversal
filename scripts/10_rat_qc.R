@@ -1,0 +1,22 @@
+# Required packages: edgeR, jsonlite. Input: imported rat counts; output: rat QC matrices.
+# Independent bulk biological samples confirmed by user. No differential tests on held-out data.
+args<-commandArgs(trailingOnly=FALSE);script<-sub('^--file=','',args[grepl('^--file=',args)])
+root<-normalizePath(file.path(dirname(script),'..'),winslash='/',mustWork=TRUE)
+.libPaths(c(file.path(root,'environment','R-library'),.Library))
+set.seed(as.integer(Sys.getenv('STUDY_SEED')))
+suppressPackageStartupMessages(library(edgeR))
+out<-file.path(root,'outputs','preprocessing','rat')
+x<-as.matrix(read.delim(gzfile(file.path(out,'rat_counts.tsv.gz')),row.names=1,check.names=FALSE))
+samples<-read.delim(file.path(out,'sample_manifest.tsv'),check.names=FALSE)
+samples<-samples[match(colnames(x),samples$sample_id),]
+y<-DGEList(counts=x,group=samples$group)
+keep<-filterByExpr(y,group=samples$group)
+y<-calcNormFactors(y[keep,,keep.lib.sizes=FALSE],method='TMM')
+lcpm<-cpm(y,log=TRUE,prior.count=2)
+con<-gzfile(file.path(out,'rat_tmm_logcpm_qc.tsv.gz'),'wt')
+write.table(data.frame(feature_id=rownames(lcpm),lcpm,check.names=FALSE),con,sep='\t',row.names=FALSE,quote=FALSE);close(con)
+write.table(data.frame(feature_id=rownames(x),retained=keep),file.path(out,'low_expression_filter.tsv'),sep='\t',row.names=FALSE,quote=FALSE)
+write.table(data.frame(sample_id=rownames(y$samples),y$samples,effective_library_size=y$samples$lib.size*y$samples$norm.factors),file.path(out,'tmm_library_metrics.tsv'),sep='\t',row.names=FALSE,quote=FALSE)
+jsonlite::write_json(list(input_genes=nrow(x),retained_genes=sum(keep),low_expression_genes=sum(!keep),normalization='TMM; logCPM prior.count=2; provisional input QC, not disease testing',count_provenance_review_pending=TRUE,independent_samples=ncol(x)),file.path(out,'normalization_qc.json'),pretty=TRUE,auto_unbox=TRUE)
+writeLines(capture.output(sessionInfo()),file.path(out,'R_sessionInfo.txt'))
+cat('RAT_QC_PASS_NO_DIFFERENTIAL_TESTS\n')

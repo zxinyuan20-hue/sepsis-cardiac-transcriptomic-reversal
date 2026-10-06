@@ -1,0 +1,44 @@
+{
+  "dataset_id": "LOCAL_RAT_LPS_2025",
+  "species": "Rattus norvegicus",
+  "material": "H9c2 rat heart-derived cardiomyoblasts",
+  "role": "held_out_cell_model_support",
+  "groups": {
+    "control": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6"
+    ],
+    "lps": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6"
+    ]
+  },
+  "independent_biological_samples": true,
+  "confirmation_source": "user, 2026-10-02",
+  "uploaded_to_public_repository": false,
+  "available_functional_phenotypes": false,
+  "lps_dose": "100 ug/mL",
+  "lps_duration": "48 h",
+  "cell_origin": "H9c2 cell line",
+  "batch": null,
+  "allow_differential_analysis_before_candidate_freeze": false,
+  "source_location_key": "local_rat_source",
+  "summary_members": [
+    "Summary/1.GeneExpression/gene_count_matrix.txt",
+    "Summary/10.SupplementalMaterial/2.MappingStat/0_gene_annotation.txt",
+    "Summary/10.SupplementalMaterial/2.MappingStat/2_mapped_stat.txt",
+    "Summary/10.SupplementalMaterial/1.RawdataStat/ReadsQC.txt"
+  ],
+  "report_members": [
+    "Report/src/summary_part/sample_info.txt"
+  ],
+  "ncbi_gene_info_url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Rattus_norvegicus.gene_info.gz"
+}

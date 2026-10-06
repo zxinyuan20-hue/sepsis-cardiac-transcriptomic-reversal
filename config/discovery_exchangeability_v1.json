@@ -1,0 +1,12 @@
+{
+ "version":"discovery-exchangeability-1.0",
+ "output":"outputs/analysis/discovery_exchangeability_v1",
+ "publication":"outputs/publication/discovery_exchangeability_v1",
+ "source_manuscript":"outputs/publication/robustness_amendment_v1/Full_manuscript_draft.md",
+ "clinical_workbook":"data/raw/geo/GSE79962/GSE79962_Clinical_metadata.xls.gz",
+ "sample_map":"outputs/preparation/GSE79962_sample_map.tsv",
+ "article_pmcid":"PMC5315660",
+ "article_pmid":"28067713",
+ "scope":"Read original workbook and source article; audit participant coverage, procurement and technical batch; design only, no new compound score or disease-label inference before documented exchangeability gate",
+ "seed":20261005
+}

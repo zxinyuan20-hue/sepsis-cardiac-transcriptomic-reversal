@@ -1,0 +1,18 @@
+{
+ "version":"manuscript-assets-1.0",
+ "date":"2026-10-05",
+ "out":"outputs/publication/manuscript_assets_v1",
+ "seed":20261005,
+ "backend":"Python matplotlib, explicitly preferred by user",
+ "width_inches":7.2,
+ "dpi":600,
+ "figure_contracts":[
+  {"figure":"Figure1","claim":"Discovery, independent disease cohorts and reused cardiac drug donors answer different questions","archetype":"schematic-led composite","risk":"Do not portray reused donors as independent drug replication"},
+  {"figure":"Figure2","claim":"Positive screening ranks and descriptive cross-context agreement did not yield formally supported cardiac candidates","archetype":"quantitative grid","risk":"Different score scales and test families must remain separate; class sensitivity is post-result"},
+  {"figure":"Figure3","claim":"Independent disease directions differ and neither cohort passes the two-test BH family","source":"external_compound_v1/figures/figure1_disease_replication","risk":"q=.0501166 is not below .05"},
+  {"figure":"Figure4","claim":"Bidirectional mean reversal does not establish formal compound support","source":"external_compound_v1/figures/figure2_all_drug_contexts","risk":"Fixed-profile donor intervals exclude patient uncertainty"},
+  {"figure":"FigureS1","claim":"Gene agreement and fixed pathways provide limited mechanistic support","source":"external_compound_v1/figures/figureS1_gene_and_pathway_evidence","risk":"Not-tested pathways are not observed P=1"}
+ ],
+ "scientific_release":"external-compound-1.0",
+ "scope":"Figure/table assembly and source-grounded Methods/Results draft; no new biological analysis"
+}

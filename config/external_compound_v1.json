@@ -1,0 +1,21 @@
+{
+ "version":"external-compound-1.0",
+ "date":"2026-10-05",
+ "seed":20261005,
+ "out":"outputs/analysis/external_compound_v1",
+ "drug_family":"All21 frozen cardiac-expansion drugs; three previously selected hypotheses highlighted, not a new test family",
+ "primary_disease":"GSE237861 sex-adjusted edgeR logFC",
+ "secondary_disease":"GSE141864 FFPE limma logFC; supporting heterogeneity assessment, not substitute primary endpoint",
+ "reference_disease":"GSE79962 frozen primary logFC, descriptive only",
+ "universe":"Intersection of prior876 measured mapped genes and all three fitted disease profiles, irrespective of differential P or effect size. Retain existing within-sample ranks over876 as assay scale; normalize disease weights over intersection only",
+ "weights":"Positive and negative disease logFC magnitudes each sum1. UP_suppression=-sum(positive_weight*drug_minus_control_rank); DOWN_restoration=sum(negative_weight*rank_change). Net=sum of two components",
+ "primary_test":"Per drug maximum of one-sided donor sign-flip P for UP_suppression and DOWN_restoration (IUT); BH across21 GSE237861 tests. BY sensitivity. Net score alone cannot satisfy gate",
+ "assumptions":"Independent donors; scalar donor contrasts symmetric about zero under null; disease profiles conditioned upon; no claim of randomized treatment rescue",
+ "secondary_tests":"GSE141864 same two-component IUT and BH21 separately; cross-cohort four-component IUT BH21 explicitly secondary. No significance shopping across families",
+ "stability":"Leave one cardiac donor out; leave one human patient out with all other steps fixed as specified. Report bidirectional fractions and all-positive flags without selecting new threshold",
+ "human_loo":"GSE237861 edgeR logFC refit ~sex+group for14 omissions, fixed full-cohort retained gene set with TMM and dispersion re-estimated; GSE141864 mean log2 RMA differences for7 omissions, fixed preprocessing/background",
+ "sensitivity":"Equal-weight top50 absolute logFC genes per direction on same intersection, if >=50 each; no gene-level FDR cutoff",
+ "escalation_rule":"No protective-mechanism escalation without primary BH<0.05, both components positive and bidirectional means stable under all donor/patient omissions in both external cohorts. Meeting this still gives transcriptomic hypothesis only",
+ "known_results":"Post-screen extension: prior drug rankings and external disease findings already known. Protocol frozen before computing this extension's drug scores. Healthy iPSC-CM perturbation donors reused, only disease context is new",
+ "no_clinical_efficacy_claim":true
+}
